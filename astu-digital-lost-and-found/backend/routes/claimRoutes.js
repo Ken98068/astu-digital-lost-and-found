@@ -39,7 +39,7 @@ router.get("/", auth("admin"), async (req, res) => {
     }
 });
 
-// --------- PUT /claims/:id ---------
+
 router.put("/:id", auth("admin"), async (req, res) => {
     const { status } = req.body;
     if (!["approved","rejected"].includes(status))
