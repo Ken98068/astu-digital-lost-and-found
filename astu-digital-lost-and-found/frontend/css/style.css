@@ -44,3 +44,17 @@ button {
 button:hover {
     background: #059669;
 }
+/* Profile page cards polish */
+#my-items .card,
+#my-claims .card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+}
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
