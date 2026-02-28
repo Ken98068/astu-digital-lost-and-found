@@ -12,5 +12,14 @@ router.get("/", auth(), async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
+// GET /items/my-items — student fetches their own items
+router.get("/my-items", auth("student"), async (req, res) => {
+    try {
+        const items = await Item.find({ createdBy: req.user.id });
+        res.json(items);
+    } catch(err) {
+        res.status(500).json({ message: "Server error" });
+    }
+});
 
 module.exports = router;
